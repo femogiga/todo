@@ -2,11 +2,12 @@
   --clr-grey: #BDBDBD;
 
   --clr-blue: #2F80ED;
+  --clr-red: #ec2f0d;
 
 }
 
-body{
-  font-size: 1.2rem;
+body {
+  font-size: 1.5rem;
   line-height: 1.5;
 }
 
@@ -43,10 +44,14 @@ body{
   margin-block-end: 2rem;
 }
 
+.flow-4 {
+  margin-block-end: 4rem;
+}
+
 
 .flex {
   display: flex;
-  gap:var(--gap,1rem)
+  gap: var(--gap, 1rem)
 }
 
 .justify-center {
@@ -136,6 +141,23 @@ body{
 }
 
 
-main{
- 
+input[type='checkbox'] {
+  width: 1.7rem;
+}
+
+.deleteall-button {
+  width: 160px;
+  padding-inline: 2.5rem;
+  padding-block: 1rem;
+  border: 1px solid var(--clr-red);
+  background-color: var(--clr-red);
+  color: white;
+  font-weight: bold;
+  align-self: flex-end
+}
+
+.main {
+
+  display: flex;
+  flex-direction: column;
 }

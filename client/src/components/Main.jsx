@@ -25,6 +25,13 @@ const Main = ({ linKVal }) => {
 
     const handleDelete = (id) => {
         setData(data.filter(item => item.id != id))
+        return
+    }
+
+
+    const handleDeleteAll = () => {
+        const filteredData = data.filter(item => item.completed === false)
+        setData(filteredData)
     }
 
 
@@ -51,14 +58,14 @@ const Main = ({ linKVal }) => {
     console.log(data)
     console.log('link', { linKVal })
     return (
-        <div>
+        <div className='main'>
             <form className='form'>
                 <fieldset className="">
                     <input type='text' value={inputValue} name="task" placeholder="add details" onChange={(e) => setInputValue(e.target.value)} />
                     <button onClick={handleClick}>Add</button>
                 </fieldset>
             </form>
-            <ul>
+            <ul className="flow-4">
 
                 {
 
@@ -81,7 +88,7 @@ const Main = ({ linKVal }) => {
 
 
             </ul>
-            {linKVal === 'Completed' ? <button>Delete</button> : null}
+            {linKVal === 'Completed' ? <button className='deleteall-button' onClick={handleDeleteAll}>delete all</button> : null}
         </div>
     );
 }
