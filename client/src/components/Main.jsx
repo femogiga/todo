@@ -59,9 +59,9 @@ const Main = ({ linKVal }) => {
     console.log(data)
     console.log('link', { linKVal })
     return (
-        <div className='main'>
+        <div className='main container'>
             <form className='form flow-4'>
-                <fieldset className="">
+                <fieldset className="fieldset">
                     <input type='text' value={inputValue} name="task" placeholder="add details" onChange={(e) => setInputValue(e.target.value)} />
                     <button onClick={handleClick}>Add</button>
                 </fieldset>

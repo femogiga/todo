@@ -9,6 +9,7 @@
 body {
   font-size: 1.5rem;
   line-height: 1.5;
+  font-family: 'Montserrat', sans-serif;
 }
 
 
@@ -72,6 +73,10 @@ body {
 
 /* ************************************************************************************************* */
 
+.container {
+  width: 90%;
+}
+
 .header {
   /* background-color: red; */
   justify-content: center;
@@ -92,14 +97,15 @@ body {
       & a {
         text-decoration: none;
         color: inherit;
-      
+
       }
     }
 
     & .hr {
       color: #17d821;
       outline: unset;
-      border: 1px solid var(--clr-grey)
+      border: 1px solid var(--clr-grey);
+      width: 90%;
     }
 
     & a:hover,
@@ -118,11 +124,14 @@ body {
 
 .form {
 
+
+
   & fieldset {
     border: none;
     display: flex;
     gap: 3rem;
     justify-content: center;
+    padding: 1rem;
 
     & input[type='text'],
     button {
@@ -132,7 +141,9 @@ body {
     }
 
     & input[type='text'] {
-      width: 29.75rem;
+      /* width:25rem; */
+      width: 50%;
+      max-width: 29.75rem;
       border-color: var(--clr-grey);
       border-width: .7px;
       outline: unset;
@@ -174,4 +185,65 @@ input[type='checkbox'] {
 
 li {
   margin-block-end: 1rem;
+}
+
+
+@media only screen and (max-width:548px) {
+  input[type='text'] {
+
+
+    min-width: 70%;
+
+  }
+
+  body {
+    font-size: 1rem;
+
+  }
+
+  fieldset {
+
+    gap: 1rem;
+  }
+
+  button {
+    padding-inline: 0rem;
+
+  }
+
+  ul {
+    list-style: none;
+    justify-content: center;
+    gap: 1rem;
+
+  }
+}
+
+
+
+
+@media only screen and (max-width:360px) {
+  input[type='text'] {
+
+
+    min-width: 75%;
+
+  }
+
+  .container{
+    width:98%;
+  }
+
+
+  button {
+    padding-inline: 0rem;
+
+  }
+
+  ul {
+    list-style: none;
+    justify-content: center;
+    gap: 1rem;
+
+  }
 }

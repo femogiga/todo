@@ -3,8 +3,8 @@ import '../App.css'
 import { Link } from 'react-router-dom'
 
 const Header = ({ callback }) => {
-const[isActive,setIsActive]=useState(false)
-const[clicked,setClicked] = useState("")
+    const [isActive, setIsActive] = useState(false)
+    const [clicked, setClicked] = useState("")
     const handleClick = (e) => {
         setIsActive({})
         e.preventDefault()
@@ -12,14 +12,14 @@ const[clicked,setClicked] = useState("")
         setIsActive(activeStyle)
     }
     const activeStyle = {
-       textDecoration:'underline'
+        textDecoration: 'underline'
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         callback(clicked)
-    },[clicked,callback])
+    }, [clicked, callback])
     return (
-        <header className="header">
+        <header className="header container">
             <h1 className={'justify-self-center'}>#todo</h1>
             <nav>
                 <ul className={"flex flow-point-5"}>
