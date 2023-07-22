@@ -8,7 +8,8 @@ const Main = ({ linKVal }) => {
 
     const styled = {
         textDecoration: 'line-through',
-        color: 'blue'
+        textDecorationColor: 'blue',
+
     }
 
 
@@ -59,7 +60,7 @@ const Main = ({ linKVal }) => {
     console.log('link', { linKVal })
     return (
         <div className='main'>
-            <form className='form'>
+            <form className='form flow-4'>
                 <fieldset className="">
                     <input type='text' value={inputValue} name="task" placeholder="add details" onChange={(e) => setInputValue(e.target.value)} />
                     <button onClick={handleClick}>Add</button>
@@ -73,8 +74,8 @@ const Main = ({ linKVal }) => {
 
 
 
-                    linKVal === 'Completed' ? data.filter(b => b.completed === true).map((item, index) => (<li key={index} className={`todo flex`}>
-                        <input id={item.id} type='checkbox' checked={item.completed} onChange={((e) => handleCheckboxChange(e, item.id))} /><p style={item.completed ? style : null}>{item.task}</p><button onClick={() => handleDelete(item.id)}><span className="material-symbols-outlined">
+                    linKVal === 'Completed' ? data.filter(b => b.completed === true).map((item, index) => (<li key={index} className={`todo flex space-between`}>
+                        <div className='flex'><input id={item.id} type='checkbox' checked={item.completed} onChange={((e) => handleCheckboxChange(e, item.id))} /><p style={item.completed ? style : null}>{item.task}</p></div><button onClick={() => handleDelete(item.id)}><span className="material-symbols-outlined">
                             delete
                         </span></button></li>))
                         : linKVal === 'Active' ? data.filter(b => b.completed === false).map((item, index) => (<li key={index} className={`todo flex`}>
